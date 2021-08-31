@@ -1,0 +1,15 @@
+---
+
+
+- hosts: [Exalt]
+  become: true
+  tasks:
+    - name: add httpd package
+      tags: httpd , exalt
+      copy: 
+        src: files/mysite.html
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: 0644
+
